@@ -20,6 +20,7 @@ import { ReviewComponent } from './restaurant-detail/reviews/review/review.compo
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './shared/shared.module';
 import { NotFoudComponent } from './not-foud/not-foud.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { NotFoudComponent } from './not-foud/not-foud.component';
     SharedModule.forRoot()
   ],
   providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     {provide: LOCALE_ID, useValue:'pt-BR'}
   ],
   bootstrap: [AppComponent]
